@@ -20,7 +20,7 @@ export const GET_DATA = "GET_DATA";
 export const SET_DATA = "SET_DATA";
 const sagaMiddleware = createSagaMiddleware();
 
-const reducer = (state, action) => {debugger;
+const reducer = (state, action) => {
   switch (action.type) {
     case GET_DATA:
       return {...state, ...{isLoading:true}};
@@ -119,7 +119,7 @@ class App4 extends React.Component {
     ); 
   }*/
 
-  render() {debugger;
+  render() {
     const view = this.props.data.isLoading ? "Loading....." : <Table data={this.props.data.countries}/>;
   
     return(
