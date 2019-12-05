@@ -7,17 +7,17 @@ function* helloSaga() {
     console.log('Hello Sagas!')
 }
 
-function* getData() {debugger;
+function* getData() {
     const response = yield fetch(API_URL);
     const data = yield response.json();
     yield put({type:SET_DATA, data: data});
 }
 
-function* getDataSagas() {debugger;
+function* getDataSagas() {
     yield takeEvery(GET_DATA, getData)
 }
 
-export default function* rootSaga() {debugger;
+export default function* rootSaga() {
   yield all([
       helloSaga(),
       getDataSagas()
